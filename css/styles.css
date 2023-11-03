@@ -64,6 +64,7 @@ display: inline-block; /* since the <a> tag is inline by default, we need to cha
 background-color: #faf8f6;
 color: #444444 /*needed to override the default link color*/
 font-weight: 400;
+text-decoration: none;
 padding: 10px;
 border-radius: 3px;
 border-bottom: 2px solid #d1b9b4; /*width of the border, type, color*/
@@ -152,13 +153,50 @@ padding-top: 300px;
     width: 50%;
 
   [class*="col-"] {
-    float: left;
+    float: left
+    padding: 10px;
   }
   }
+  row::after{
+    content:"";
+    clear: both;
+    display: table;
+  }
+  #about-page h3 {margin-top:0;}
 }
 @media only screen and (min-width: 1024px){
-
+  container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media only screen and (min-width: 1440px){
 
+}
+@keyframes color-change {
+  0% {fill: #edc655;}
+  50% {fill: #fcffad;}
+  100% {fill: #f76414;}
+}
+.sun{
+  animation-duration: 4s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+@keyframes cloud-move {
+  from {transform: translate(0,50px);}
+  to {transform: translate(200px,50px);}
+}
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+@keyframes cloud-move-reverse {
+  from {transform: translate(446px,48px);}
+  to {transform: translate (100px,48px);}
+}
+.cloud-back {
+  animation: 30s cloud-move-reverse infinite alternate linear;
 }
