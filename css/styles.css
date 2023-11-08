@@ -89,8 +89,7 @@ padding: 0 15px;
 }
 header {
 background-color: #d1b9b4;
-text-align: center;
-padding: 10px;
+padding: 10px 0 4px;
 border-bottom: 3px solid #444444;
 box-shadow: 0px 2px 10px 0px rgba(0,0,0,0,6);
 position: fixed;
@@ -114,10 +113,9 @@ max-width: 150px;
 nav > ul {
 list-style-type: none;
 padding: 0;
+margin: 0;
 }
-nav > ul > li {
-display: inline-block;
-}
+
 nav > ul > li > a {
 padding: 0 15px;
 text-transform: uppercase;
@@ -131,7 +129,7 @@ nav > ul > li > a:hover {
 color: #dfd1c9;
 }
 #hero {
-padding: 200px 0;
+padding: 150px 0;
 display: inline-block;
 width: 100%;
 text-align: center;
@@ -147,6 +145,39 @@ background-color: #d1b9b4
   content: "";
   clear: both;
   display: table;
+}
+
+.navtoggle li:not(:last-child) {
+  display: none;
+}
+
+.navtoggle, .navtoggle.responsive {
+  position: relative;
+}
+
+.navtoggle li .icon {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  font-size: 20px;
+  padding-right: 0;
+}
+
+.navtoggle.responsive li  {
+  display: block;
+}
+
+.navtoggle.responsive nav {
+  padding: 24px 0 0;
+}
+.navtoggle.responsive li  {
+  display: block;
+  padding: 10px 0;
+  border-top: 1px solid #DFD1C9;
+}
+
+.navtoggle.responsive li:last-child  {
+  padding: 0 0 10px;
 }
 
 @media only screen and (min-width: 640px){
@@ -172,6 +203,20 @@ background-color: #d1b9b4
 
   #about-page h3 {
     margin-top:0;
+  }
+  nav > ul > li {
+    display: inline-block;
+  }
+  
+  .navtoggle li:not(:last-child) {
+    display: inline-block;
+  }  
+  .navtoggle li:last-child {
+    display: none;
+  } 
+  
+nav > ul {
+  margin: 1em 0;
   }
 }
 
